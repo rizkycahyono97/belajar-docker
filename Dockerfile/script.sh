@@ -48,3 +48,29 @@ docker container create --name ignore rizkycahyono/ignore
 docker container start ignore
 
 docker container logs ignore
+
+# EXPOSE Instruction
+docker build -t rizkycahyono/expose expose
+
+docker image inspect rizkycahyono/expose
+
+docker container create --name expose -p 8080:8080 rizkycahyono/expose
+
+docker container start expose
+
+docker container ps expose
+
+docker container stop expose
+
+# ENV Instruction
+docker build -t rizkycahyono/env env
+
+docker image inspect rizkycahyono/env
+
+docker container create --name env --env APP_PORT=9090 -p 9090:9090 rizkycahyono/env # menggunakan port yang kita kasih sendiri
+
+docker container start env
+
+docker container logs env
+
+docker container stop env
