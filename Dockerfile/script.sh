@@ -92,3 +92,35 @@ docker volume ls
 
 docker container stop volume
 
+# WORKDIR Instruction
+docker build -t rizkycahyono/workdir workdir
+
+docker container create --name workdir -p 8080:8080 rizkycahyono/workdir
+
+docker container start workdir
+
+docker container exec -i -t workdir /bin/sh
+
+docker container stop workdir
+
+# USER Instruction
+docker build -t rizkycahyono/user user
+
+docker container create --name user -p 8080:8080 rizkycahyono/user
+
+docker container start user
+
+docker container exec -i -t user /bin/sh
+
+docker container stop user
+
+# ARGUMEN Instruction
+docker build -t rizkycahyono/arg arg --build-arg app=pzn
+
+docker container create --name arg -p 8080:8080 rizkycahyono/arg
+
+docker container start arg
+
+docker container exec -i -t arg /bin/sh
+
+docker container stop arg
