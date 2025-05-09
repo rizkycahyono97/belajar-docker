@@ -74,3 +74,21 @@ docker container start env
 docker container logs env
 
 docker container stop env
+
+# VOLUME Instruction
+docker build -t rizkycahyono/volume volume
+
+docker image inspect rizkycahyono/volume
+
+docker container create --name volume -p 8080:8080 rizkycahyono/volume
+
+docker container start volume
+
+docker container logs volume
+
+docker container inspect volume
+
+docker volume ls
+
+docker container stop volume
+
