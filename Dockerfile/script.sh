@@ -124,3 +124,27 @@ docker container start arg
 docker container exec -i -t arg /bin/sh
 
 docker container stop arg
+
+# HEALTHCHECK Instruction
+docker build -t rizkycahyono/health health
+
+docker container create --name health -p 8080:8080 rizkycahyono/health
+
+docker container start health
+
+docker container ls
+
+docker container inspect health
+
+docker container stop health
+
+# ENTRYPOINT Instruction
+docker build -t rizkycahyono/entrypoint entrypoint
+
+docker image inspect rizkycahyono/entrypoint
+
+docker container create --name entrypoint -p 8080:8080 rizkycahyono/entrypoint
+
+docker container start entrypoint
+
+docker container stop entrypoint
