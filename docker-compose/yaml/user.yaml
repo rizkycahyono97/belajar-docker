@@ -1,0 +1,22 @@
+firstName: Rizky
+middleName: Cahyono
+lastName: Putra
+
+#array
+hobbies:
+  - Coding
+  - Reading
+  - Swimming
+
+# Nested
+address:
+  street: JL. Sudirman
+  city: Lamongan
+  country: Indonesia
+
+# Array Nested
+wallet:
+  - type: cast
+    ammount: 10000
+  - type: debit
+    ammount: 20000

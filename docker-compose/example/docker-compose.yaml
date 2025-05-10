@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  nginx-example:
+    container_name: nginx-example
+    image: nginx:alpine
+  nginx-example-2:
+    container_name: nginx-example-2
+    image: nginx:alpine
