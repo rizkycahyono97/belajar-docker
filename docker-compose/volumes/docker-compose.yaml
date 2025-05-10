@@ -1,0 +1,31 @@
+services:
+  mongodb-1:
+    image: mongo:latest
+    container_name: mongodb-1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: user
+    volumes:
+      - "mongo-data1:/data/db" # seperti bind mount, tetapi diambil dari volumes
+  mongodb-2:
+    image: mongo:latest
+    container_name: mongodb-2
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: user
+    volumes:
+      - type: volume
+        source: mongo-data2
+        target: "/data/db"
+        read_only: false
+volumes:
+  mongo-data1:
+    name: mongo-data1
+  mongo-data2:
+    name: mongo-data2
