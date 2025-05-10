@@ -148,3 +148,14 @@ docker container create --name entrypoint -p 8080:8080 rizkycahyono/entrypoint
 docker container start entrypoint
 
 docker container stop entrypoint
+
+# MULTI STAGE Instruction
+docker build -t rizkycahyono/multi multi
+
+docker image ls
+
+docker container create --name multi -p 8080:8080 rizkycahyono/multi
+
+docker container start multi
+
+docker container stop multi
