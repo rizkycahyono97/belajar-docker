@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  mongodb-example:
+    image: mongo:latest
+    container_name: mongodb-example
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: user
+    networks:
+      - network-example
+
+  mongodb-express-example:
+    image: mongo-express:latest
+    container_name: mongodb-express-example
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root # Sesuaikan dengan username MongoDB
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root # Sesuaikan dengan password MongoDB
+      ME_CONFIG_MONGODB_SERVER: mongodb-example # Nama layanan MongoDB
+    networks:
+      - network-example
+    depends_on:
+      - mongodb-example
+
+networks:
+  network-example:
+    name: network-example
+    driver: bridge
