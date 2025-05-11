@@ -7,5 +7,5 @@ EXPOSE 8080
 
 ENTRYPOINT ["go", "run"]
 
-# seakan-akan seperti CMD ["go", "run", "/app/main.go"]
+# seakan-akan seperti CMD ["go", "run", "/app/app.go"]
 CMD ["/app/main.go"]

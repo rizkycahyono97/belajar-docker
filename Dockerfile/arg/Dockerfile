@@ -1,6 +1,6 @@
 FROM golang:1.18-alpine
 
-# menambahkan argumen yang mana defaultnya main
+# menambahkan argumen yang mana defaultnya app
 ARG app=main
 
 RUN mkdir /app
@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY main.go .
 
-RUN mv main.go ${app}.go
+RUN mv app.go ${app}.go
 
 EXPOSE 8080
 
